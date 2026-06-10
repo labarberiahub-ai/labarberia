@@ -161,7 +161,7 @@ const Index = () => {
 
         <div className="container-wide relative z-10 flex h-full flex-col justify-center pb-20">
           <div className="flex items-center gap-3 mb-6 animate-fade-up">
-            <span className="text-[#9CA3AF] text-xs">◆</span>
+            <span className="text-[#9D9D9D] text-xs">◆</span>
             <p className="text-[11px] uppercase tracking-[0.28em] font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               ◆ SANTIAGO DE CHILE · DESDE EL 2014 ◆
             </p>
@@ -171,7 +171,7 @@ const Index = () => {
             <span className="block" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>No es una</span>
             <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(1.8rem, 4vw, 4.5rem)' }}>
               BARBERÍA.{' '}
-              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, color: '#9CA3AF' }}>Es un hub.</span>
+              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, color: '#9D9D9D' }}>Es un hub.</span>
             </span>
           </h1>
 
@@ -190,13 +190,13 @@ const Index = () => {
         </div>
 
         {/* Marquee */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden border-y border-[#9CA3AF]/20 bg-[#000000]/85 backdrop-blur py-3">
+        <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden border-y border-[#9D9D9D]/20 bg-[#000000]/85 backdrop-blur py-3">
           <div className="flex animate-marquee whitespace-nowrap">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex shrink-0 items-center gap-0 px-0">
                 {marqueeItems.map((t) => (
                   <span key={t} className="display text-lg tracking-[0.25em] text-[#F7F4EF]/50 px-5">
-                    {t} <span className="text-[#9CA3AF] mx-2">◆</span>
+                    {t} <span className="text-[#9D9D9D] mx-2">◆</span>
                   </span>
                 ))}
               </div>
@@ -212,19 +212,19 @@ const Index = () => {
             <p className="eyebrow mb-3">◆ El concepto HUB</p>
             <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
               Un espacio donde el talento<br />
-              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9CA3AF]">
+              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
                 independiente florece.
               </span>
             </h2>
           </div>
           <div className="flex flex-col justify-end">
-            <p className="text-[#9CA3AF] leading-relaxed max-w-md">
+            <p className="text-[#9D9D9D] leading-relaxed max-w-md">
               La Barbería no es solo un lugar donde cortarse el pelo. Es una plataforma donde barberos independientes de excelencia encuentran silla, comunidad, marca y clientes. Cada barbero es su propio negocio — nosotros ponemos el espacio, el estilo y la cultura.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-px bg-[#9CA3AF]/10 border border-[#9CA3AF]/10 md:grid-cols-4">
+        <div className="grid gap-px bg-[#9D9D9D]/10 border border-[#9D9D9D]/10 md:grid-cols-4">
           {[
             { k: '+16',   l: 'Barberos residentes',     d: 'Talento independiente seleccionado' },
             { k: '5',     l: 'Locales en Santiago',     d: 'Ubicaciones estratégicamente localizadas.' },
@@ -232,16 +232,16 @@ const Index = () => {
             { k: '10',    l: '10 Años en el mercado',  d: 'Excelencia y tradición en cada servicio.' },
           ].map((s) => (
             <div key={s.l} className="bg-background p-8">
-              <p className="display text-5xl md:text-6xl text-[#9CA3AF] leading-none">{s.k}</p>
+              <p className="display text-5xl md:text-6xl text-[#9D9D9D] leading-none">{s.k}</p>
               <p className="mt-3 text-sm uppercase tracking-[0.18em] text-[#F7F4EF]">{s.l}</p>
-              <p className="mt-1 text-xs text-[#9CA3AF]/60">{s.d}</p>
+              <p className="mt-1 text-xs text-[#9D9D9D]/60">{s.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── GOOGLE REVIEWS ───────────────────────────────────────────────── */}
-      <section className="bg-[#000000] border-y border-[#9CA3AF]/10 py-16">
+      <section className="bg-[#000000] border-y border-[#9D9D9D]/10 py-16">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
             <div>
@@ -249,26 +249,26 @@ const Index = () => {
               <h2 className="display text-3xl md:text-5xl text-[#F7F4EF]">+2.600 reseñas verificadas</h2>
             </div>
             <div className="flex items-center gap-2">
-              {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-[#9CA3AF] text-[#9CA3AF]" />)}
-              <span className="ml-2 text-sm text-[#9CA3AF]/60">Google Reviews</span>
+              {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-[#9D9D9D] text-[#9D9D9D]" />)}
+              <span className="ml-2 text-sm text-[#9D9D9D]/60">Google Reviews</span>
             </div>
           </div>
 
           {/* Carrusel */}
           <div className="relative overflow-hidden">
             <div className="transition-all duration-500">
-              <div className="rounded-sm border border-[#9CA3AF]/15 bg-[#111] p-8 md:p-10 max-w-2xl">
-                <Quote className="h-8 w-8 text-[#9CA3AF] mb-4 opacity-60" />
+              <div className="rounded-sm border border-[#9D9D9D]/15 bg-[#111] p-8 md:p-10 max-w-2xl">
+                <Quote className="h-8 w-8 text-[#9D9D9D] mb-4 opacity-60" />
                 <p className="text-lg leading-relaxed text-[#F7F4EF]/85 italic">
                   &ldquo;{googleReviews[reviewIndex].text}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center justify-between">
                   <div>
                     <p className="text-sm font-semibold text-[#F7F4EF]">{googleReviews[reviewIndex].author}</p>
-                    <p className="text-xs text-[#9CA3AF] uppercase tracking-[0.18em] mt-0.5">{googleReviews[reviewIndex].local}</p>
+                    <p className="text-xs text-[#9D9D9D] uppercase tracking-[0.18em] mt-0.5">{googleReviews[reviewIndex].local}</p>
                   </div>
                   <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-[#9CA3AF] text-[#9CA3AF]" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-[#9D9D9D] text-[#9D9D9D]" />)}
                   </div>
                 </div>
               </div>
@@ -277,7 +277,7 @@ const Index = () => {
             <div className="flex gap-2 mt-6">
               {googleReviews.map((_, i) => (
                 <button key={i} onClick={() => setReviewIndex(i)}
-                  className={cn('h-1.5 rounded-full transition-all', i === reviewIndex ? 'w-8 bg-[#9CA3AF]' : 'w-1.5 bg-[#9CA3AF]/30 hover:bg-[#9CA3AF]/60')} />
+                  className={cn('h-1.5 rounded-full transition-all', i === reviewIndex ? 'w-8 bg-[#9D9D9D]' : 'w-1.5 bg-[#9D9D9D]/30 hover:bg-[#9D9D9D]/60')} />
               ))}
             </div>
           </div>
@@ -289,7 +289,7 @@ const Index = () => {
         <div className="mb-10">
           <p className="eyebrow mb-3">◆ Talento residente</p>
           <h2 className="display text-4xl md:text-6xl">Elige con quién atenderte</h2>
-          <p className="mt-3 max-w-xl text-[#9CA3AF]/70">
+          <p className="mt-3 max-w-xl text-[#9D9D9D]/70">
             Cada barbero tiene su propio sello y estilo y agenda. Reserva con quien más te represente.
           </p>
         </div>
@@ -301,7 +301,7 @@ const Index = () => {
               className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
                 activeLocal === loc.value
                   ? 'bg-[#374151] text-[#000000] border-transparent font-semibold'
-                  : 'border-[#9CA3AF]/20 text-[#F7F4EF]/70 hover:border-[#9CA3AF]/60 hover:text-[#9CA3AF]'
+                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#9D9D9D]/60 hover:text-[#9D9D9D]'
               )}>
               {loc.label}
             </button>
@@ -320,37 +320,37 @@ const Index = () => {
       </section>
 
       {/* ── SERVICIOS ────────────────────────────────────────────────────── */}
-      <section id="servicios" className="bg-[#000000] border-y border-[#9CA3AF]/10 mt-16 scroll-mt-24">
+      <section id="servicios" className="bg-[#000000] border-y border-[#9D9D9D]/10 mt-16 scroll-mt-24">
         <div className="container-wide py-20 md:py-28">
           <div className="mb-12">
             <p className="eyebrow mb-3">◆ Servicios</p>
             <h2 className="display text-4xl md:text-6xl max-w-3xl">
               Lo que hacemos,{' '}
-              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9CA3AF]">
+              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
                 bien hecho.
               </span>
             </h2>
-            <p className="mt-3 max-w-xl text-[#9CA3AF]/60">
+            <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
               Resultados consistentes y atención excepcional. Sin complicaciones ni atajos. Solo calidad.
             </p>
           </div>
 
-          <div className="grid gap-px bg-[#9CA3AF]/10 border border-[#9CA3AF]/10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px bg-[#9D9D9D]/10 border border-[#9D9D9D]/10 md:grid-cols-2 lg:grid-cols-3">
             {serviceCatalog.map((srv) => (
               <div key={srv.name} className="group bg-[#000000] p-6 hover:bg-[#111]/80 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[#9CA3AF] text-xs">◆</span>
+                  <span className="text-[#9D9D9D] text-xs">◆</span>
                   <h3 className="display text-2xl text-[#F7F4EF]">{srv.name}</h3>
                 </div>
-                <p className="text-sm text-[#9CA3AF]/60 leading-relaxed mb-4">{srv.desc}</p>
+                <p className="text-sm text-[#9D9D9D]/60 leading-relaxed mb-4">{srv.desc}</p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]/50">
+                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]/50">
                     {srv.duration && <><Clock className="h-3.5 w-3.5" /> {srv.duration} min</>}
                   </div>
                   {srv.price ? (
-                    <p className="display text-2xl text-[#9CA3AF]">{formatCLP(srv.price)}</p>
+                    <p className="display text-2xl text-[#9D9D9D]">{formatCLP(srv.price)}</p>
                   ) : (
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#9CA3AF]">Consultar</p>
+                    <p className="text-xs uppercase tracking-[0.18em] text-[#9D9D9D]">Consultar</p>
                   )}
                 </div>
               </div>
@@ -372,7 +372,7 @@ const Index = () => {
         <div className="mb-8">
           <p className="eyebrow mb-3">◆ Nuestros locales</p>
           <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
-          <p className="mt-3 max-w-xl text-[#9CA3AF]/60">
+          <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
             Cinco locales diseñados para la experiencia de barbería clásica premium.
           </p>
         </div>
@@ -382,7 +382,7 @@ const Index = () => {
               className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
                 activeLocalPhoto === tab
                   ? 'bg-[#374151] text-[#000000] border-transparent font-semibold'
-                  : 'border-[#9CA3AF]/20 text-[#F7F4EF]/70 hover:border-[#9CA3AF]/60 hover:text-[#9CA3AF]'
+                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#9D9D9D]/60 hover:text-[#9D9D9D]'
               )}>
               {tab}
             </button>
@@ -394,20 +394,20 @@ const Index = () => {
             className="h-full w-full object-cover transition-all duration-500" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#000]/60 to-transparent" />
           <div className="absolute bottom-4 left-5">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]">◆ {localPhotos[carouselIndex]?.local}</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]">◆ {localPhotos[carouselIndex]?.local}</p>
             <p className="text-xs text-[#F7F4EF]/60 mt-1">{carouselIndex + 1} / {localPhotos.length}</p>
           </div>
           <button onClick={() => setCarouselIndex(i => (i - 1 + localPhotos.length) % localPhotos.length)}
-            className="absolute left-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9CA3AF] hover:bg-[#9CA3AF] hover:text-[#000] transition-all text-xl">‹</button>
+            className="absolute left-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9D9D9D] hover:bg-[#9D9D9D] hover:text-[#000] transition-all text-xl">‹</button>
           <button onClick={() => setCarouselIndex(i => (i + 1) % localPhotos.length)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9CA3AF] hover:bg-[#9CA3AF] hover:text-[#000] transition-all text-xl">›</button>
+            className="absolute right-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9D9D9D] hover:bg-[#9D9D9D] hover:text-[#000] transition-all text-xl">›</button>
         </div>
 
         <div className="grid grid-cols-4 gap-2 md:grid-cols-8">
           {localPhotos.map((p, i) => (
             <button key={i} onClick={() => setCarouselIndex(i)}
               className={cn('relative aspect-square overflow-hidden rounded-sm transition-all',
-                carouselIndex === i ? 'ring-2 ring-[#9CA3AF] opacity-100' : 'opacity-50 hover:opacity-80')}>
+                carouselIndex === i ? 'ring-2 ring-[#9D9D9D] opacity-100' : 'opacity-50 hover:opacity-80')}>
               <img src={p.src} alt={p.alt} loading="lazy" className="h-full w-full object-cover" />
             </button>
           ))}
@@ -420,11 +420,11 @@ const Index = () => {
           <p className="eyebrow mb-3">◆ Ubicaciones</p>
           <h2 className="display text-4xl md:text-6xl">
             5 sucursales en Santiago,{' '}
-            <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9CA3AF]">
+            <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
               la misma calidad.
             </span>
           </h2>
-          <p className="mt-3 max-w-xl text-[#9CA3AF]/60">
+          <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
             Presencia en sectores estratégicos de Santiago. Mismo servicio. Más cerca de ti.
           </p>
         </div>
@@ -433,22 +433,22 @@ const Index = () => {
           {locations.map((loc) => (
             <a key={loc.name} href={loc.maps} target="_blank" rel="noopener noreferrer"
               onClick={() => trackExternalLink(`map_${loc.name}`)}
-              className="group block rounded-sm border border-[#9CA3AF]/10 bg-[#000000] p-6 hover:border-[#9CA3AF]/40 transition-all">
+              className="group block rounded-sm border border-[#9D9D9D]/10 bg-[#000000] p-6 hover:border-[#9D9D9D]/40 transition-all">
               <div className="flex items-start justify-between mb-4">
-                <MapPin className="h-5 w-5 text-[#9CA3AF]" />
-                <span className="text-[#9CA3AF] text-xs group-hover:translate-x-1 transition-transform">◆</span>
+                <MapPin className="h-5 w-5 text-[#9D9D9D]" />
+                <span className="text-[#9D9D9D] text-xs group-hover:translate-x-1 transition-transform">◆</span>
               </div>
-              <p className="text-[10px] uppercase tracking-[0.22em] text-[#9CA3AF]/60 mb-1">{loc.label}</p>
+              <p className="text-[10px] uppercase tracking-[0.22em] text-[#9D9D9D]/60 mb-1">{loc.label}</p>
               <p className="display text-2xl leading-tight text-[#F7F4EF]">{loc.name}</p>
               <p className="mt-3 text-sm text-[#F7F4EF]/70">{loc.street}</p>
-              <p className="text-xs text-[#9CA3AF]/50">{loc.area}</p>
-              <div className="mt-5 text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]">Ver en mapa →</div>
+              <p className="text-xs text-[#9D9D9D]/50">{loc.area}</p>
+              <div className="mt-5 text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]">Ver en mapa →</div>
             </a>
           ))}
 
           {/* 6to local */}
-          <div className="rounded-sm border border-dashed border-[#9CA3AF]/30 bg-[#9CA3AF]/5 p-6 flex flex-col justify-center">
-            <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#9CA3AF]/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#9CA3AF] font-semibold w-fit">
+          <div className="rounded-sm border border-dashed border-[#9D9D9D]/30 bg-[#9D9D9D]/5 p-6 flex flex-col justify-center">
+            <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#9D9D9D]/15 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#9D9D9D] font-semibold w-fit">
               ◆ 6º Local en camino
             </span>
             <p className="mt-4 display text-2xl leading-tight text-[#F7F4EF]">Próximamente</p>
@@ -458,25 +458,25 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex items-center gap-3 text-sm text-[#9CA3AF]/50 border-t border-[#9CA3AF]/10 pt-6">
-          <Calendar className="h-4 w-4 text-[#9CA3AF]" />
+        <div className="mt-10 flex items-center gap-3 text-sm text-[#9D9D9D]/50 border-t border-[#9D9D9D]/10 pt-6">
+          <Calendar className="h-4 w-4 text-[#9D9D9D]" />
           <span>Abiertos todo el año, excepto feriados irrenunciables.</span>
         </div>
       </section>
 
       {/* ── FRANQUICIA ───────────────────────────────────────────────────── */}
-      <section id="franquicia" className="bg-[#000000] border-y border-[#9CA3AF]/10 scroll-mt-24">
+      <section id="franquicia" className="bg-[#000000] border-y border-[#9D9D9D]/10 scroll-mt-24">
         <div className="container-wide py-20 md:py-28">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <p className="eyebrow mb-3">◆ Franquicia</p>
               <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
                 Sé parte del{' '}
-                <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9CA3AF]">
+                <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
                   hub.
                 </span>
               </h2>
-              <p className="mt-6 text-[#9CA3AF] leading-relaxed max-w-lg">
+              <p className="mt-6 text-[#9D9D9D] leading-relaxed max-w-lg">
                 La Barbería es más que un local — es un modelo de negocio probado. Con 10 años en el mercado, 5 sucursales y +2.000 clientes mensuales, abrimos nuestra red a emprendedores con visión.
               </p>
               <ul className="mt-8 space-y-4">
@@ -487,10 +487,10 @@ const Index = () => {
                   { icon: '◆', t: 'Comunidad de barberos', d: 'Acceso a nuestra red de talento residente.' },
                 ].map((item) => (
                   <li key={item.t} className="flex gap-4">
-                    <span className="text-[#9CA3AF] mt-0.5 shrink-0">{item.icon}</span>
+                    <span className="text-[#9D9D9D] mt-0.5 shrink-0">{item.icon}</span>
                     <div>
                       <p className="text-sm font-semibold text-[#F7F4EF] uppercase tracking-[0.15em]">{item.t}</p>
-                      <p className="text-xs text-[#9CA3AF]/60 mt-0.5">{item.d}</p>
+                      <p className="text-xs text-[#9D9D9D]/60 mt-0.5">{item.d}</p>
                     </div>
                   </li>
                 ))}
@@ -501,7 +501,7 @@ const Index = () => {
                   Quiero saber más <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-[#9CA3AF]/30 text-[#9CA3AF] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-6 py-3 hover:border-[#9CA3AF] transition-colors">
+                  className="inline-flex items-center gap-2 border border-[#9D9D9D]/30 text-[#9D9D9D] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-6 py-3 hover:border-[#9D9D9D] transition-colors">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
                 </a>
               </div>
@@ -515,10 +515,10 @@ const Index = () => {
                 { k: '+16', l: 'Barberos en la red', d: 'Talento independiente' },
                 { k: '+2K', l: 'Clientes al mes',    d: 'Base fiel y creciente' },
               ].map((s) => (
-                <div key={s.l} className="rounded-sm border border-[#9CA3AF]/10 bg-[#111] p-6">
-                  <p className="display text-4xl text-[#9CA3AF] leading-none">{s.k}</p>
+                <div key={s.l} className="rounded-sm border border-[#9D9D9D]/10 bg-[#111] p-6">
+                  <p className="display text-4xl text-[#9D9D9D] leading-none">{s.k}</p>
                   <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#F7F4EF]">{s.l}</p>
-                  <p className="mt-1 text-xs text-[#9CA3AF]/50">{s.d}</p>
+                  <p className="mt-1 text-xs text-[#9D9D9D]/50">{s.d}</p>
                 </div>
               ))}
             </div>
@@ -527,41 +527,41 @@ const Index = () => {
       </section>
 
       {/* ── CONTACTO ─────────────────────────────────────────────────────── */}
-      <section id="contacto" className="border-t border-[#9CA3AF]/10 scroll-mt-24">
+      <section id="contacto" className="border-t border-[#9D9D9D]/10 scroll-mt-24">
         <div className="container-wide py-20 md:py-28">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
               <p className="eyebrow mb-3">◆ Contacto</p>
               <h2 className="display text-4xl md:text-5xl mb-8">Escríbenos</h2>
               {contactSent ? (
-                <div className="rounded-sm border border-[#9CA3AF]/30 bg-[#9CA3AF]/10 p-8 text-center">
-                  <p className="display text-3xl text-[#9CA3AF]">◆ Mensaje enviado</p>
-                  <p className="mt-3 text-[#9CA3AF]/70">Te respondemos a la brevedad en info@labarberia.cl</p>
-                  <button onClick={() => setContactSent(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-[#9CA3AF] hover:underline">
+                <div className="rounded-sm border border-[#9D9D9D]/30 bg-[#9D9D9D]/10 p-8 text-center">
+                  <p className="display text-3xl text-[#9D9D9D]">◆ Mensaje enviado</p>
+                  <p className="mt-3 text-[#9D9D9D]/70">Te respondemos a la brevedad en info@labarberia.cl</p>
+                  <button onClick={() => setContactSent(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-[#9D9D9D] hover:underline">
                     Enviar otro mensaje
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} className="space-y-4">
                   <div>
-                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]/60 block mb-2">Nombre</label>
+                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]/60 block mb-2">Nombre</label>
                     <input required value={contactForm.name}
                       onChange={e => setContactForm(f => ({ ...f, name: e.target.value }))}
-                      className="w-full rounded-sm border border-[#9CA3AF]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9CA3AF]/60 focus:outline-none transition-colors"
+                      className="w-full rounded-sm border border-[#9D9D9D]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9D9D9D]/60 focus:outline-none transition-colors"
                       placeholder="Tu nombre" />
                   </div>
                   <div>
-                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]/60 block mb-2">Email</label>
+                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]/60 block mb-2">Email</label>
                     <input required type="email" value={contactForm.email}
                       onChange={e => setContactForm(f => ({ ...f, email: e.target.value }))}
-                      className="w-full rounded-sm border border-[#9CA3AF]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9CA3AF]/60 focus:outline-none transition-colors"
+                      className="w-full rounded-sm border border-[#9D9D9D]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9D9D9D]/60 focus:outline-none transition-colors"
                       placeholder="tu@email.com" />
                   </div>
                   <div>
-                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]/60 block mb-2">Mensaje</label>
+                    <label className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]/60 block mb-2">Mensaje</label>
                     <textarea required rows={4} value={contactForm.message}
                       onChange={e => setContactForm(f => ({ ...f, message: e.target.value }))}
-                      className="w-full rounded-sm border border-[#9CA3AF]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9CA3AF]/60 focus:outline-none transition-colors resize-none"
+                      className="w-full rounded-sm border border-[#9D9D9D]/20 bg-[#111] px-4 py-3 text-sm text-[#F7F4EF] focus:border-[#9D9D9D]/60 focus:outline-none transition-colors resize-none"
                       placeholder="¿En qué podemos ayudarte?" />
                   </div>
                   <button type="submit"
@@ -577,27 +577,27 @@ const Index = () => {
               <h2 className="display text-4xl md:text-5xl mb-4">
                 ¿Quieres trabajar<br />con nosotros?
               </h2>
-              <p className="text-[#9CA3AF]/60 leading-relaxed mb-8">
+              <p className="text-[#9D9D9D]/60 leading-relaxed mb-8">
                 Si eres barbero y quieres ser parte del hub, o si buscas trabajo en cualquier rol en La Barbería, envíanos tu CV. Siempre estamos buscando talento.
               </p>
 
               {cvSent ? (
-                <div className="rounded-sm border border-[#9CA3AF]/30 bg-[#9CA3AF]/10 p-8 text-center">
-                  <p className="display text-3xl text-[#9CA3AF]">◆ CV enviado</p>
-                  <p className="mt-3 text-[#9CA3AF]/70">Lo revisamos y te contactamos si hay match.</p>
-                  <button onClick={() => setCvSent(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-[#9CA3AF] hover:underline">
+                <div className="rounded-sm border border-[#9D9D9D]/30 bg-[#9D9D9D]/10 p-8 text-center">
+                  <p className="display text-3xl text-[#9D9D9D]">◆ CV enviado</p>
+                  <p className="mt-3 text-[#9D9D9D]/70">Lo revisamos y te contactamos si hay match.</p>
+                  <button onClick={() => setCvSent(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-[#9D9D9D] hover:underline">
                     Enviar otro
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleCvSubmit} className="space-y-4">
                   <div onClick={() => fileRef.current?.click()}
-                    className="cursor-pointer rounded-sm border border-dashed border-[#9CA3AF]/30 bg-[#9CA3AF]/5 p-8 text-center hover:border-[#9CA3AF]/60 transition-colors">
-                    <Upload className="h-8 w-8 text-[#9CA3AF] mx-auto mb-3" />
+                    className="cursor-pointer rounded-sm border border-dashed border-[#9D9D9D]/30 bg-[#9D9D9D]/5 p-8 text-center hover:border-[#9D9D9D]/60 transition-colors">
+                    <Upload className="h-8 w-8 text-[#9D9D9D] mx-auto mb-3" />
                     <p className="text-[#F7F4EF] text-sm font-medium">
                       {cvFile ? cvFile.name : 'Haz clic para cargar tu CV'}
                     </p>
-                    <p className="text-[#9CA3AF]/50 text-xs mt-1">PDF, DOC hasta 10MB</p>
+                    <p className="text-[#9D9D9D]/50 text-xs mt-1">PDF, DOC hasta 10MB</p>
                     <input ref={fileRef} type="file" accept=".pdf,.doc,.docx" className="hidden"
                       onChange={e => setCvFile(e.target.files?.[0] ?? null)} />
                   </div>
@@ -608,14 +608,14 @@ const Index = () => {
                 </form>
               )}
 
-              <div className="mt-8 border-t border-[#9CA3AF]/10 pt-6 space-y-3">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-[#9CA3AF]/40">O escríbenos directo</p>
-                <a href="mailto:info@labarberia.cl" className="flex items-center gap-2 text-sm text-[#9CA3AF] hover:underline">
+              <div className="mt-8 border-t border-[#9D9D9D]/10 pt-6 space-y-3">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]/40">O escríbenos directo</p>
+                <a href="mailto:info@labarberia.cl" className="flex items-center gap-2 text-sm text-[#9D9D9D] hover:underline">
                   info@labarberia.cl
                 </a>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                   onClick={() => trackExternalLink('whatsapp_contacto')}
-                  className="flex items-center gap-2 text-sm text-[#9CA3AF] hover:underline">
+                  className="flex items-center gap-2 text-sm text-[#9D9D9D] hover:underline">
                   <MessageCircle className="h-4 w-4" /> +56 9 8975 0668
                 </a>
               </div>
@@ -639,7 +639,7 @@ const Index = () => {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className={cn(
-          'fixed bottom-24 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-sm border border-[#9CA3AF]/30 bg-[#000000]/80 backdrop-blur text-[#9CA3AF] shadow-lg transition-all hover:border-[#9CA3AF] hover:bg-[#111]',
+          'fixed bottom-24 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-sm border border-[#9D9D9D]/30 bg-[#000000]/80 backdrop-blur text-[#9D9D9D] shadow-lg transition-all hover:border-[#9D9D9D] hover:bg-[#111]',
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         )}
         aria-label="Volver al inicio">
