@@ -132,11 +132,11 @@ const BarberProfile = () => {
 
           <div>
             {/* Sucursal + Nombre */}
-            <p className="text-[11px] uppercase tracking-[0.28em] text-[#DD873C] mb-1">{barber.chair}</p>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#9CA3AF] mb-1">{barber.chair}</p>
             <h1 className="display text-5xl md:text-7xl leading-[0.92] text-[#F7F4EF]">{barber.name}</h1>
 
             {barber.alias && (
-              <p className="mt-2 text-sm italic text-[#F2D1AA]/50">&ldquo;{barber.alias}&rdquo;</p>
+              <p className="mt-2 text-sm italic text-[#9CA3AF]/50">&ldquo;{barber.alias}&rdquo;</p>
             )}
 
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85">{barber.bio}</p>
@@ -145,17 +145,17 @@ const BarberProfile = () => {
             {statCards.length > 0 && (
               <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {statCards.map((s: any) => (
-                  <div key={s.label} className="rounded-sm border border-[#DD873C]/15 bg-[#111] p-3">
+                  <div key={s.label} className="rounded-sm border border-[#9CA3AF]/15 bg-[#111] p-3">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-base leading-none">{s.icon}</span>
-                      <p className="text-[9px] uppercase tracking-[0.2em] text-[#F2D1AA]/40">{s.label}</p>
+                      <p className="text-[9px] uppercase tracking-[0.2em] text-[#9CA3AF]/40">{s.label}</p>
                     </div>
                     {s.isInstagram ? (
                       <a
                         href={`https://instagram.com/${barber.instagram.replace('@', '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-[#DD873C] hover:underline"
+                        className="text-sm font-medium text-[#9CA3AF] hover:underline"
                       >
                         {s.value}
                       </a>
