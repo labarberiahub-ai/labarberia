@@ -222,43 +222,42 @@ const Index = () => {
       {/* ── GOOGLE REVIEWS ───────────────────────────────────────────────── */}
       <section className="bg-[#000000] border-y border-[#9D9D9D]/10 py-16">
         <div className="container-wide">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
-            <div>
-              <p className="eyebrow mb-3">◆ Lo que dicen</p>
-              <h2 className="display text-3xl md:text-5xl text-[#F7F4EF]">+2.600 reseñas verificadas</h2>
+          {/* Header Opción B — score grande + info */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center mb-10">
+            <div className="flex items-center gap-6 border-r border-[#9D9D9D]/10 pr-8 shrink-0">
+              <div className="text-center">
+                <p className="display text-6xl md:text-7xl text-[#F7F4EF] leading-none" style={{ fontFamily: 'Playfair Display, serif' }}>5.0</p>
+                <div className="flex justify-center gap-1 my-2">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-[#9D9D9D] text-[#9D9D9D]" />)}
+                </div>
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#9D9D9D]/50">Google</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-[#9D9D9D] text-[#9D9D9D]" />)}
-              <span className="ml-2 text-sm text-[#9D9D9D]/60">Google Reviews</span>
+            <div>
+              <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Lo que dicen</p>
+              <h2 className="display text-3xl md:text-5xl text-[#F7F4EF]">+2.600 reseñas verificadas</h2>
+              <p className="mt-2 text-sm text-[#9D9D9D]/60">La opinión de miles de clientes que ya eligieron a su barbero en La Barbería</p>
             </div>
           </div>
 
-          {/* Carrusel */}
-          <div className="relative overflow-hidden">
-            <div className="transition-all duration-500">
-              <div className="rounded-sm border border-[#9D9D9D]/15 bg-[#111] p-8 md:p-10 max-w-2xl">
-                <Quote className="h-8 w-8 text-[#9D9D9D] mb-4 opacity-60" />
-                <p className="text-lg leading-relaxed text-[#F7F4EF]/85 italic">
-                  &ldquo;{googleReviews[reviewIndex].text}&rdquo;
+          {/* Cards grid */}
+          <div className="grid gap-4 md:grid-cols-3">
+            {googleReviews.slice(0, 3).map((review, i) => (
+              <div key={i} className="rounded-sm border border-[#9D9D9D]/12 bg-[#111] p-6">
+                <p className="text-sm leading-relaxed text-[#F7F4EF]/75 italic mb-6">
+                  &ldquo;{review.text}&rdquo;
                 </p>
-                <div className="mt-6 flex items-center justify-between">
+                <div className="flex items-center justify-between pt-4 border-t border-[#9D9D9D]/10">
                   <div>
-                    <p className="text-sm font-semibold text-[#F7F4EF]">{googleReviews[reviewIndex].author}</p>
-                    <p className="text-xs text-[#9D9D9D] uppercase tracking-[0.18em] mt-0.5">{googleReviews[reviewIndex].local}</p>
+                    <p className="text-sm font-semibold text-[#F7F4EF]">{review.author}</p>
+                    <p className="text-[10px] text-[#9D9D9D] uppercase tracking-[0.15em] mt-0.5">{review.local}</p>
                   </div>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-[#9D9D9D] text-[#9D9D9D]" />)}
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => <Star key={j} className="h-3 w-3 fill-[#9D9D9D] text-[#9D9D9D]" />)}
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Dots */}
-            <div className="flex gap-2 mt-6">
-              {googleReviews.map((_, i) => (
-                <button key={i} onClick={() => setReviewIndex(i)}
-                  className={cn('h-1.5 rounded-full transition-all', i === reviewIndex ? 'w-8 bg-[#9D9D9D]' : 'w-1.5 bg-[#9D9D9D]/30 hover:bg-[#9D9D9D]/60')} />
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
