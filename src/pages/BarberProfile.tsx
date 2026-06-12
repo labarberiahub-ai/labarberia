@@ -123,11 +123,7 @@ const BarberProfile = () => {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-            {barber.plan === 'Premium' && (
-              <span className="absolute top-4 left-4 rounded-sm bg-[#F7F4EF] px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#000000] font-semibold">
-                Destacado
-              </span>
-            )}
+
           </div>
 
           <div>
