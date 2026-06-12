@@ -178,26 +178,12 @@ const Index = () => {
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: '300ms' }}>
             <Button asChild size="lg" className="bg-[#F7F4EF] text-[#000000] font-semibold uppercase tracking-[0.15em] hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all rounded-sm px-8">
               <a href="#barberos">
-                Reservar hora <ArrowRight className="h-4 w-4 ml-2" />
+                Reservar hora
               </a>
             </Button>
           </div>
         </div>
 
-        {/* Marquee */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden border-y border-[#9D9D9D]/20 bg-[#000000]/85 backdrop-blur py-3">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex shrink-0 items-center gap-0 px-0">
-                {marqueeItems.map((t) => (
-                  <span key={t} className="display text-lg tracking-[0.25em] text-[#F7F4EF]/50 px-5">
-                    {t} <span className="text-[#9D9D9D] mx-2">◆</span>
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ── STATS / HUB CONCEPT ──────────────────────────────────────────── */}
@@ -620,15 +606,6 @@ const Index = () => {
       </section>
 
       <Footer />
-
-      {/* ── WHATSAPP FLOTANTE ─────────────────────────────────────────────── */}
-      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-        onClick={() => trackExternalLink('whatsapp_fab')}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110"
-        style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)' }}
-        aria-label="WhatsApp">
-        <MessageCircle className="h-7 w-7 text-white" />
-      </a>
 
       {/* ── SCROLL TO TOP ─────────────────────────────────────────────────── */}
       <button
