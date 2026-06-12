@@ -358,12 +358,13 @@ const Index = () => {
             { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/barrioitalia/foto-1.jpg', name: 'Barrio Italia', sub: 'Condell 1166 · Providencia' },
             { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-1.jpg', name: 'Consistorial', sub: 'Los Presidentes 8220 · Peñalolén' },
           ]
+          const totalH = 280 + 3 + 160 // Manuel Montt + gap + bottom row
+          const rightH = (totalH - 3) / 2 // each right cell
           return (
             <>
               <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr] gap-[3px]">
                 {/* Columna izquierda */}
                 <div className="flex flex-col gap-[3px]">
-                  {/* Manuel Montt grande */}
                   <button onClick={() => setLightboxIndex(0)}
                     className="group relative overflow-hidden rounded-sm bg-[#1a1a1a] text-left w-full" style={{ height: '280px' }}>
                     <img src={galeria[0].src} alt={galeria[0].name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -374,7 +375,6 @@ const Index = () => {
                       <p className="text-xs text-[#F7F4EF]/50 mt-1">{galeria[0].sub}</p>
                     </div>
                   </button>
-                  {/* Barrio Italia + Consistorial */}
                   <div className="grid grid-cols-2 gap-[3px]">
                     {[3, 4].map((idx) => (
                       <button key={idx} onClick={() => setLightboxIndex(idx)}
@@ -389,11 +389,11 @@ const Index = () => {
                     ))}
                   </div>
                 </div>
-                {/* Columna derecha — Los Dominicos + Príncipe de Gales */}
+                {/* Columna derecha — alturas exactas para alinear */}
                 <div className="flex flex-col gap-[3px]">
                   {[1, 2].map((idx) => (
                     <button key={idx} onClick={() => setLightboxIndex(idx)}
-                      className="group relative overflow-hidden rounded-sm bg-[#222] flex-1 text-left w-full" style={{ minHeight: '215px' }}>
+                      className="group relative overflow-hidden rounded-sm bg-[#222] text-left w-full" style={{ height: `${rightH}px` }}>
                       <img src={galeria[idx].src} alt={galeria[idx].name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
                       <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -441,7 +441,7 @@ const Index = () => {
             <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
               la misma calidad</span>
           </h2>
-          <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
+          <p className="mt-3 text-[#9D9D9D]/60 whitespace-nowrap">
             Presencia en sectores estratégicos de Santiago · Mismo servicio · Más cerca de ti</p>
         </div>
 
