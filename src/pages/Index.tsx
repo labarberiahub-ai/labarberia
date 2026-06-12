@@ -171,7 +171,7 @@ const Index = () => {
               SOMOS LA BARBERÍA
             </span>
             <span className="block" style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.2rem, 3vw, 3.2rem)', lineHeight: 1.1, color: '#9D9D9D' }}>
-              Hub de barberos profesionales.
+              Hub de barberos profesionales
             </span>
           </h1>
 
