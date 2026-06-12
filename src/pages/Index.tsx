@@ -167,13 +167,12 @@ const Index = () => {
           </div>
 
           <h1 className="display leading-[0.95] text-bone animate-fade-up" style={{ animationDelay: '100ms' }}>
-            <span className="block" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>SOMOS</span>
             <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>
-              LA BARBERÍA.
+              SOMOS LA BARBERÍA
             </span>
           </h1>
 
-          <p className="mt-4 animate-fade-up text-[#F7F4EF]/90" style={{ animationDelay: '200ms', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.5rem, 3vw, 2.8rem)', lineHeight: 1.2 }}>
+          <p className="mt-4 animate-fade-up" style={{ animationDelay: '200ms', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.5rem, 3vw, 2.8rem)', lineHeight: 1.2, color: '#9D9D9D' }}>
             Hub de barberos profesionales
           </p>
 
