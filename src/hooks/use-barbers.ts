@@ -10,7 +10,7 @@ export function useBarbers(chairFilter?: string) {
         .from('barbers')
         .select('*')
         .eq('active', true)
-        .order('plan', { ascending: false })
+        .order('sort_order', { ascending: true })
 
       if (chairFilter && chairFilter !== 'Todos') {
         query = query.ilike('chair', `%${chairFilter}%`)

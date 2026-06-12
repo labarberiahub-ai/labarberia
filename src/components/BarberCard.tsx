@@ -22,11 +22,7 @@ const BarberCard = ({ barber, index = 0 }: { barber: Barber; index?: number }) =
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/30 to-transparent" />
 
-        {barber.plan === 'Premium' && (
-          <span className="absolute top-3 right-3 rounded-sm bg-[#F7F4EF] px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#000000] font-semibold">
-            Destacado
-          </span>
-        )}
+
 
         {/* Info bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-5">
