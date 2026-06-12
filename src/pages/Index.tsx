@@ -344,15 +344,18 @@ const Index = () => {
 
       {/* ── PORTAFOLIO (fotos de locales) ─────────────────────────────────── */}
       <section id="portafolio" className="container-wide py-20 md:py-28 scroll-mt-24">
-        <div className="mb-8">
-          <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Nuestros locales</p>
-          <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
-          <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
-            Cinco locales diseñados para la experiencia de barbería clásica premium</p>
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Nuestros locales</p>
+            <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
+          </div>
+          <span className="hidden md:block text-[10px] uppercase tracking-[0.2em] text-[#9D9D9D]/40">5 locales · Santiago</span>
         </div>
-        <div className="mb-8 flex flex-wrap gap-2">
+
+        {/* Tabs */}
+        <div className="mb-6 flex flex-wrap gap-2">
           {localTabs.map((tab) => (
-            <button key={tab} onClick={() => { setActiveLocalPhoto(tab); setCarouselIndex(0) }}
+            <button key={tab} onClick={() => setActiveLocalPhoto(tab)}
               className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
                 activeLocalPhoto === tab
                   ? 'bg-[#F7F4EF] text-[#000000] border-transparent font-semibold'
@@ -363,27 +366,17 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="relative aspect-[16/7] overflow-hidden rounded-sm bg-[#111] mb-3">
-          <img src={localPhotos[carouselIndex]?.src} alt={localPhotos[carouselIndex]?.alt}
-            className="h-full w-full object-cover transition-all duration-500" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000]/60 to-transparent" />
-          <div className="absolute bottom-4 left-5">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-[#9D9D9D]">◆ {localPhotos[carouselIndex]?.local}</p>
-            <p className="text-xs text-[#F7F4EF]/60 mt-1">{carouselIndex + 1} / {localPhotos.length}</p>
-          </div>
-          <button onClick={() => setCarouselIndex(i => (i - 1 + localPhotos.length) % localPhotos.length)}
-            className="absolute left-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9D9D9D] hover:bg-[#9D9D9D] hover:text-[#000] transition-all text-xl">‹</button>
-          <button onClick={() => setCarouselIndex(i => (i + 1) % localPhotos.length)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#9D9D9D] hover:bg-[#9D9D9D] hover:text-[#000] transition-all text-xl">›</button>
-        </div>
-
-        <div className="grid grid-cols-4 gap-2 md:grid-cols-8">
+        {/* Grid 3 columnas */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-[3px]">
           {localPhotos.map((p, i) => (
-            <button key={i} onClick={() => setCarouselIndex(i)}
-              className={cn('relative aspect-square overflow-hidden rounded-sm transition-all',
-                carouselIndex === i ? 'ring-2 ring-[#9D9D9D] opacity-100' : 'opacity-50 hover:opacity-80')}>
-              <img src={p.src} alt={p.alt} loading="lazy" className="h-full w-full object-cover" />
-            </button>
+            <div key={i} className="relative overflow-hidden rounded-sm bg-[#111] group" style={{ aspectRatio: '4/3' }}>
+              <img src={p.src} alt={p.alt} loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000]/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <span className="text-[9px] uppercase tracking-[0.2em] text-[#F7F4EF]/70">{p.local}</span>
+              </div>
+            </div>
           ))}
         </div>
       </section>
