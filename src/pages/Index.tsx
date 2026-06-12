@@ -265,7 +265,7 @@ const Index = () => {
       {/* ── BARBEROS POR LOCAL ────────────────────────────────────────────── */}
       <section id="barberos" className="container-wide py-16 scroll-mt-24">
         <div className="mb-10">
-          <p className="eyebrow mb-3">◆ Talento residente</p>
+          <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Talento residente</p>
           <h2 className="display text-4xl md:text-6xl">Elige con quién atenderte</h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/70">
             Cada barbero tiene su propio sello y estilo y agenda. Reserva con quien más te represente</p>
@@ -277,8 +277,8 @@ const Index = () => {
             <button key={loc.value} onClick={() => setActiveLocal(loc.value)}
               className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
                 activeLocal === loc.value
-                  ? 'bg-[#374151] text-[#000000] border-transparent font-semibold'
-                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#9D9D9D]/60 hover:text-[#9D9D9D]'
+                  ? 'bg-[#F7F4EF] text-[#000000] border-transparent font-semibold'
+                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#F7F4EF]/60 hover:text-[#F7F4EF]'
               )}>
               {loc.label}
             </button>
@@ -355,8 +355,8 @@ const Index = () => {
             <button key={tab} onClick={() => { setActiveLocalPhoto(tab); setCarouselIndex(0) }}
               className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
                 activeLocalPhoto === tab
-                  ? 'bg-[#374151] text-[#000000] border-transparent font-semibold'
-                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#9D9D9D]/60 hover:text-[#9D9D9D]'
+                  ? 'bg-[#F7F4EF] text-[#000000] border-transparent font-semibold'
+                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#F7F4EF]/60 hover:text-[#F7F4EF]'
               )}>
               {tab}
             </button>
