@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils'
 // ── HERO PHOTO — reemplazar por la nueva foto cuando esté disponible ──────────
 // TODO: sube la nueva foto al bucket de Supabase (barberos/locales/hero/hero-new.jpg)
 // y actualiza esta URL
-const heroShop = 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/manuelmontt/slide_montt.jpg'
+const heroShop = 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/slide_montt.jpg'
 
 const AGENDAPRO_URL = 'https://labarberia.agendapro.com/cl'
 const WHATSAPP_URL  = 'https://wa.me/56989750668'
