@@ -421,14 +421,14 @@ const Index = () => {
       {/* ── UBICACIONES ──────────────────────────────────────────────────── */}
       <section id="ubicaciones" className="container-wide py-20 md:py-28 scroll-mt-24">
         <div className="mb-12">
-          <p className="eyebrow mb-3">◆ Ubicaciones</p>
+          <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Ubicaciones</p>
           <h2 className="display text-4xl md:text-6xl">
             5 sucursales en Santiago,{' '}
             <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
               la misma calidad</span>
           </h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
-            Presencia en sectores estratégicos de Santiago. Mismo servicio. Más cerca de ti</p>
+            Presencia en sectores estratégicos de Santiago · Mismo servicio · Más cerca de ti</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -459,10 +459,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex items-center gap-3 text-sm text-[#9D9D9D]/50 border-t border-[#9D9D9D]/10 pt-6">
-          <Calendar className="h-4 w-4 text-[#9D9D9D]" />
-          <span>Abiertos todo el año, excepto feriados irrenunciables</span>
-        </div>
+
       </section>
 
       {/* ── FRANQUICIA ───────────────────────────────────────────────────── */}
@@ -470,7 +467,7 @@ const Index = () => {
         <div className="container-wide py-20 md:py-28">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <p className="eyebrow mb-3">◆ Franquicia</p>
+              <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Franquicia</p>
               <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
                 Sé parte del{' '}
                 <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
@@ -497,12 +494,9 @@ const Index = () => {
               <div className="mt-10 flex flex-wrap gap-3">
                 <a href="#contacto"
                   className="inline-flex items-center gap-2 bg-[#F7F4EF] text-[#000000] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-8 py-3 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  Quiero saber más <ArrowRight className="h-4 w-4" />
+                  Quiero saber más
                 </a>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-[#9D9D9D]/30 text-[#9D9D9D] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-6 py-3 hover:border-[#9D9D9D] transition-colors">
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
-                </a>
+
               </div>
             </div>
 
