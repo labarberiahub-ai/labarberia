@@ -441,7 +441,7 @@ const Index = () => {
             <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
               la misma calidad</span>
           </h2>
-          <p className="mt-3 text-[#9D9D9D]/60 whitespace-nowrap">
+          <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
             Presencia en sectores estratégicos de Santiago · Mismo servicio · Más cerca de ti</p>
         </div>
 
