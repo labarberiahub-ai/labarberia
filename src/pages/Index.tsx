@@ -167,16 +167,14 @@ const Index = () => {
           </div>
 
           <h1 className="display leading-[0.95] text-bone animate-fade-up" style={{ animationDelay: '100ms' }}>
-            <span className="block" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>No es una</span>
-            <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(1.8rem, 4vw, 4.5rem)' }}>
-              BARBERÍA.{' '}
-              <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, color: '#9D9D9D' }}>Es un hub.</span>
+            <span className="block" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>SOMOS</span>
+            <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>
+              LA BARBERÍA.
             </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg animate-fade-up" style={{ animationDelay: '200ms' }}>
-            Reserva con los mejores barberos de Santiago. Elige por estilo,
-            no por turno. 5 locales · Agenda online en segundos.
+            Hub de barberos profesionales
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: '300ms' }}>
