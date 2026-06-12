@@ -161,7 +161,6 @@ const Index = () => {
 
         <div className="container-wide relative z-10 flex h-full flex-col justify-center pb-20">
           <div className="flex items-center gap-3 mb-6 animate-fade-up">
-            <span className="text-[#9D9D9D] text-xs">◆</span>
             <p className="text-[11px] uppercase tracking-[0.28em] font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               ◆ SANTIAGO DE CHILE · DESDE EL 2014 ◆
             </p>
