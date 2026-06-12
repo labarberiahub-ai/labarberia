@@ -94,6 +94,7 @@ const Index = () => {
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
   const [activeLocalPhoto, setActiveLocalPhoto] = useState('Todos')
   const [carouselIndex, setCarouselIndex] = useState(0)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [cvFile, setCvFile] = useState<File | null>(null)
   const [contactSent, setContactSent] = useState(false)
   const [cvSent, setCvSent] = useState(false)
@@ -349,73 +350,86 @@ const Index = () => {
           <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr] gap-[3px]">
-
-          {/* Columna izquierda */}
-          <div className="flex flex-col gap-[3px]">
-            {/* Manuel Montt — foto destacada */}
-            <a href="https://www.google.com/maps/place/Manuel+Montt+1221,+Providencia" target="_blank" rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-sm bg-[#1a1a1a]" style={{ height: '280px' }}>
-              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/manuelmontt/foto-1.jpg"
-                alt="Manuel Montt" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#9D9D9D]/70 mb-1">Sucursal</p>
-                <p className="display text-2xl text-[#F7F4EF]">Manuel Montt</p>
-                <p className="text-xs text-[#F7F4EF]/50 mt-1">Manuel Montt 1221, local 202 · Providencia</p>
-              </div>
-            </a>
-
-            {/* Barrio Italia + Consistorial */}
-            <div className="grid grid-cols-2 gap-[3px]">
-              <a href="https://www.google.com/maps/place/Condell+1166,+Providencia" target="_blank" rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-sm bg-[#222]" style={{ height: '160px' }}>
-                <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/barrioitalia/foto-1.jpg"
-                  alt="Barrio Italia" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-sm font-medium text-[#F7F4EF]">Barrio Italia</p>
-                  <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Providencia</p>
+        {(() => {
+          const galeria = [
+            { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/manuelmontt/foto-1.jpg', name: 'Manuel Montt', sub: 'Manuel Montt 1221, local 202 · Providencia', big: true },
+            { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/losdominicos/foto-1.jpg', name: 'Los Dominicos', sub: 'Padre Hurtado Central 1531 · Las Condes' },
+            { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-2.jpeg', name: 'Príncipe de Gales', sub: 'Príncipe de Gales 5921 · La Reina' },
+            { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/barrioitalia/foto-1.jpg', name: 'Barrio Italia', sub: 'Condell 1166 · Providencia' },
+            { src: 'https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-1.jpg', name: 'Consistorial', sub: 'Los Presidentes 8220 · Peñalolén' },
+          ]
+          return (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr] gap-[3px]">
+                {/* Columna izquierda */}
+                <div className="flex flex-col gap-[3px]">
+                  {/* Manuel Montt grande */}
+                  <button onClick={() => setLightboxIndex(0)}
+                    className="group relative overflow-hidden rounded-sm bg-[#1a1a1a] text-left w-full" style={{ height: '280px' }}>
+                    <img src={galeria[0].src} alt={galeria[0].name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-[#9D9D9D]/70 mb-1">Sucursal</p>
+                      <p className="display text-2xl text-[#F7F4EF]">{galeria[0].name}</p>
+                      <p className="text-xs text-[#F7F4EF]/50 mt-1">{galeria[0].sub}</p>
+                    </div>
+                  </button>
+                  {/* Barrio Italia + Consistorial */}
+                  <div className="grid grid-cols-2 gap-[3px]">
+                    {[3, 4].map((idx) => (
+                      <button key={idx} onClick={() => setLightboxIndex(idx)}
+                        className="group relative overflow-hidden rounded-sm bg-[#222] text-left w-full" style={{ height: '160px' }}>
+                        <img src={galeria[idx].src} alt={galeria[idx].name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <p className="text-sm font-medium text-[#F7F4EF]">{galeria[idx].name}</p>
+                          <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">{galeria[idx].sub.split('·')[1]?.trim()}</p>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Los+Presidentes+8220+Peñalolén" target="_blank" rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-sm bg-[#1a1a1a]" style={{ height: '160px' }}>
-                <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-1.jpg"
-                  alt="Consistorial" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-sm font-medium text-[#F7F4EF]">Consistorial</p>
-                  <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Peñalolén</p>
+                {/* Columna derecha — Los Dominicos + Príncipe de Gales */}
+                <div className="flex flex-col gap-[3px]">
+                  {[1, 2].map((idx) => (
+                    <button key={idx} onClick={() => setLightboxIndex(idx)}
+                      className="group relative overflow-hidden rounded-sm bg-[#222] flex-1 text-left w-full" style={{ minHeight: '215px' }}>
+                      <img src={galeria[idx].src} alt={galeria[idx].name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <p className="text-sm font-medium text-[#F7F4EF]">{galeria[idx].name}</p>
+                        <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">{galeria[idx].sub.split('·')[1]?.trim()}</p>
+                      </div>
+                    </button>
+                  ))}
                 </div>
-              </a>
-            </div>
-          </div>
-
-          {/* Columna derecha */}
-          <div className="flex flex-col gap-[3px]">
-            <a href="https://www.google.com/maps/place/Padre+Hurtado+Central+1531,+Las+Condes" target="_blank" rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-sm bg-[#222] flex-1" style={{ minHeight: '215px' }}>
-              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/losdominicos/foto-1.jpg"
-                alt="Los Dominicos" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-sm font-medium text-[#F7F4EF]">Los Dominicos</p>
-                <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Padre Hurtado Central</p>
               </div>
-            </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Príncipe+de+Gales+5921+La+Reina" target="_blank" rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-sm bg-[#1a1a1a] flex-1" style={{ minHeight: '215px' }}>
-              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-2.jpeg"
-                alt="Príncipe de Gales" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-sm font-medium text-[#F7F4EF]">Príncipe de Gales</p>
-                <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">La Reina</p>
-              </div>
-            </a>
-          </div>
 
-        </div>
+              {/* Lightbox */}
+              {lightboxIndex !== null && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000]/90 backdrop-blur-sm"
+                  onClick={() => setCarouselIndex(0 as any)}>
+                  <div className="relative max-w-4xl w-full mx-4" onClick={e => e.stopPropagation()}>
+                    <img src={galeria[lightboxIndex!]?.src} alt={galeria[lightboxIndex!]?.name}
+                      className="w-full max-h-[80vh] object-contain rounded-sm" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#000]/70 to-transparent rounded-b-sm">
+                      <p className="display text-2xl text-[#F7F4EF]">{galeria[lightboxIndex!]?.name}</p>
+                      <p className="text-sm text-[#F7F4EF]/60 mt-1">{galeria[lightboxIndex!]?.sub}</p>
+                    </div>
+                    {/* Prev / Next */}
+                    <button onClick={() => setLightboxIndex(i => ((i ?? 0) - 1 + galeria.length) % galeria.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#F7F4EF] hover:bg-[#F7F4EF] hover:text-[#000] transition-all text-xl">‹</button>
+                    <button onClick={() => setLightboxIndex(i => ((i ?? 0) + 1) % galeria.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#F7F4EF] hover:bg-[#F7F4EF] hover:text-[#000] transition-all text-xl">›</button>
+                    {/* Close */}
+                    <button onClick={() => setLightboxIndex(null)}
+                      className="absolute top-3 right-3 h-9 w-9 flex items-center justify-center rounded-sm bg-[#000]/60 text-[#F7F4EF] hover:bg-[#F7F4EF] hover:text-[#000] transition-all text-lg">✕</button>
+                  </div>
+                </div>
+              )}
+            </>
+          )
+        })()}
       </section>
 
       {/* ── UBICACIONES ──────────────────────────────────────────────────── */}
