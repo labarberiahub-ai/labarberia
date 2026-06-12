@@ -1,36 +1,24 @@
 import { useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, Instagram, Clock, ExternalLink, Share2, CalendarDays, Star, Music, Dumbbell } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowLeft, ExternalLink, Share2 } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SEO, barberSchema } from '@/components/seo/SEO'
 import { useBarber } from '@/hooks/use-barbers'
 import { trackBarberView, trackReserveClick } from '@/lib/analytics'
 
-// Datos extra por slug (mientras no estén en Supabase)
-const barberExtras: Record<string, {
-  years_at_lb?: number
-  birthday?: string
-  zodiac?: string
-  fav_artist?: string
-  hobby?: string
-  available_days?: string
-}> = {}
-
 function getZodiacEmoji(sign?: string) {
   const map: Record<string, string> = {
     aries: '♈', tauro: '♉', geminis: '♊', cancer: '♋', leo: '♌', virgo: '♍',
     libra: '♎', escorpio: '♏', sagitario: '♐', capricornio: '♑', acuario: '♒', piscis: '♓',
   }
-  return sign ? (map[sign.toLowerCase()] ?? '⭐') : '⭐'
+  return sign ? (map[sign.toLowerCase()] ?? '◆') : '◆'
 }
 
 const BarberProfile = () => {
   const { slug = '' } = useParams()
   const navigate = useNavigate()
   const { data: barber, isLoading, isError } = useBarber(slug)
-  const extras = barberExtras[slug] ?? {}
 
   useEffect(() => {
     if (barber) trackBarberView(barber.name, barber.slug)
@@ -49,8 +37,8 @@ const BarberProfile = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <div className="container-wide py-24">
-          <div className="grid gap-10 lg:grid-cols-[4fr_8fr]">
-            <div className="aspect-[3/4] rounded-sm bg-card animate-pulse" />
+          <div className="grid gap-10 lg:grid-cols-[3fr_9fr]">
+            <div className="aspect-[3/4] max-w-xs rounded-sm bg-card animate-pulse" />
             <div className="space-y-4 pt-4">
               <div className="h-4 w-24 rounded bg-card animate-pulse" />
               <div className="h-16 w-3/4 rounded bg-card animate-pulse" />
@@ -68,33 +56,32 @@ const BarberProfile = () => {
         <Header />
         <div className="container-wide py-32 text-center">
           <p className="display text-4xl text-muted-foreground">Barbero no encontrado</p>
-          <Button asChild variant="copper" className="mt-8">
-            <Link to="/">Volver al inicio</Link>
-          </Button>
+          <Link to="/" className="inline-flex mt-8 bg-[#F7F4EF] text-[#000] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-8 py-3 hover:bg-white transition-colors">
+            Volver al inicio
+          </Link>
         </div>
         <Footer />
       </div>
     )
   }
 
-  const agendaUrl = barber.agendapro_url || 'https://labarberia.agendapro.com/cl'
+  const agendaUrl = (barber as any).agendapro_url || 'https://labarberia.agendapro.com/cl'
 
   const statCards = [
-    extras.years_at_lb && { icon: '✦', label: 'Años en La Barbería', value: `${extras.years_at_lb} años` },
-    barber.experience && { icon: '✂', label: 'Años de oficio', value: `${barber.experience} años` },
-    extras.birthday && { icon: '🎂', label: 'Cumpleaños', value: extras.birthday },
-    extras.zodiac && { icon: getZodiacEmoji(extras.zodiac), label: 'Signo zodiacal', value: extras.zodiac },
-    extras.fav_artist && { icon: '🎵', label: 'Artista favorito', value: extras.fav_artist },
-    extras.hobby && { icon: '⚡', label: 'Hobby', value: extras.hobby },
-    extras.available_days && { icon: '📅', label: 'Días disponibles', value: extras.available_days },
-    barber.instagram && { icon: '📸', label: 'Instagram', value: barber.instagram, isInstagram: true },
+    (barber as any).years_at_lb && { icon: '✦', label: 'Años en La Barbería', value: `${(barber as any).years_at_lb} años` },
+    (barber as any).birthday && { icon: '🎂', label: 'Cumpleaños', value: (barber as any).birthday },
+    (barber as any).zodiac && { icon: getZodiacEmoji((barber as any).zodiac), label: 'Signo zodiacal', value: (barber as any).zodiac },
+    (barber as any).fav_artist && { icon: '🎵', label: 'Artista favorito', value: (barber as any).fav_artist },
+    (barber as any).hobby && { icon: '⚡', label: 'Hobby', value: (barber as any).hobby },
+    (barber as any).available_days && { icon: '📅', label: 'Días disponibles', value: (barber as any).available_days },
+    (barber as any).instagram && { icon: '📸', label: 'Instagram', value: (barber as any).instagram, isInstagram: true },
   ].filter(Boolean)
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title={`${barber.name} — Barbero en Santiago`}
-        description={barber.bio}
+        description={(barber as any).bio}
         canonical={`/barberos/${barber.slug}`}
         ogImage={barber.avatar_url}
         schema={barberSchema(barber)}
@@ -102,62 +89,50 @@ const BarberProfile = () => {
       <Header />
 
       <div className="container-wide pt-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors"
-        >
+        <button onClick={() => navigate(-1)}
+          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#9D9D9D]/60 hover:text-[#F7F4EF] transition-colors">
           <ArrowLeft className="h-3.5 w-3.5" /> Volver
         </button>
       </div>
 
       <section className="container-wide pt-8 pb-16">
-        <div className="grid gap-10 lg:grid-cols-[5fr_7fr] items-start">
+        <div className="grid gap-10 lg:grid-cols-[3fr_9fr] items-start">
 
-          {/* Foto — más compacta */}
-          <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted shadow-elegant max-w-sm w-full">
-            <img
-              src={barber.avatar_url}
-              alt={barber.name}
-              width={480}
-              height={640}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-
+          {/* Foto compacta */}
+          <div className="relative overflow-hidden rounded-sm bg-[#111] max-w-[280px] w-full" style={{ aspectRatio: '3/4' }}>
+            <img src={barber.avatar_url} alt={barber.name}
+              className="h-full w-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%)' }} />
           </div>
 
-          <div>
-            {/* Sucursal + Nombre */}
-            <p className="text-[11px] uppercase tracking-[0.28em] text-[#9D9D9D] mb-1">{barber.chair}</p>
+          <div className="pt-2">
+            {/* Sucursal */}
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#9D9D9D] mb-2">{barber.chair}</p>
+            {/* Nombre */}
             <h1 className="display text-5xl md:text-7xl leading-[0.92] text-[#F7F4EF]">{barber.name}</h1>
 
-            {barber.alias && (
-              <p className="mt-2 text-sm italic text-[#9D9D9D]/50">&ldquo;{barber.alias}&rdquo;</p>
+            {(barber as any).bio && (
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#F7F4EF]/70">{(barber as any).bio}</p>
             )}
 
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85">{barber.bio}</p>
-
-            {/* Stat cards — datos curiosos */}
+            {/* Stat cards */}
             {statCards.length > 0 && (
-              <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
                 {statCards.map((s: any) => (
-                  <div key={s.label} className="rounded-sm border border-[#9D9D9D]/15 bg-[#111] p-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-base leading-none">{s.icon}</span>
-                      <p className="text-[9px] uppercase tracking-[0.2em] text-[#9D9D9D]/40">{s.label}</p>
+                  <div key={s.label} className="rounded-sm border border-[#9D9D9D]/12 bg-[#111] p-3 hover:border-[#9D9D9D]/30 transition-colors">
+                    <p className="text-[8px] uppercase tracking-[0.22em] text-[#9D9D9D]/40 mb-2">{s.label}</p>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm leading-none">{s.icon}</span>
+                      {s.isInstagram ? (
+                        <a href={`https://instagram.com/${(barber as any).instagram.replace('@', '')}`}
+                          target="_blank" rel="noopener noreferrer"
+                          className="text-sm font-medium text-[#9D9D9D] hover:text-[#F7F4EF] hover:underline transition-colors">
+                          {s.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm font-medium text-[#F7F4EF]">{s.value}</p>
+                      )}
                     </div>
-                    {s.isInstagram ? (
-                      <a
-                        href={`https://instagram.com/${barber.instagram.replace('@', '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-[#9D9D9D] hover:underline"
-                      >
-                        {s.value}
-                      </a>
-                    ) : (
-                      <p className="text-sm font-medium text-[#F7F4EF]">{s.value}</p>
-                    )}
                   </div>
                 ))}
               </div>
@@ -165,46 +140,20 @@ const BarberProfile = () => {
 
             {/* Botones B&N */}
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={agendaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href={agendaUrl} target="_blank" rel="noopener noreferrer"
                 onClick={() => trackReserveClick(barber.name, 'profile')}
-                className="inline-flex items-center gap-2 bg-[#F7F4EF] text-[#000000] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-8 py-3 hover:bg-white transition-colors"
-              >
+                className="inline-flex items-center gap-2 bg-[#F7F4EF] text-[#000000] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-8 py-3 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all">
                 Reservar con {barber.name.split(' ')[0]}
                 <ExternalLink className="h-4 w-4" />
               </a>
-              <button
-                onClick={handleShare}
-                className="inline-flex items-center gap-2 border border-[#F7F4EF]/20 text-[#F7F4EF] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-6 py-3 hover:border-[#F7F4EF]/60 transition-colors"
-              >
+              <button onClick={handleShare}
+                className="inline-flex items-center gap-2 border border-[#F7F4EF]/20 text-[#F7F4EF] font-semibold uppercase tracking-[0.15em] text-sm rounded-sm px-6 py-3 hover:border-[#F7F4EF]/60 hover:bg-[#F7F4EF]/5 transition-all">
                 <Share2 className="h-4 w-4" /> Compartir
               </button>
             </div>
           </div>
         </div>
       </section>
-
-      {/* PORTAFOLIO */}
-      {(barber as any).portfolio && (barber as any).portfolio.length > 0 && (
-        <section className="container-wide py-16">
-          <p className="eyebrow mb-3">Portafolio</p>
-          <h2 className="display text-3xl md:text-5xl mb-8">Trabajo reciente</h2>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-            {((barber as any).portfolio as string[]).map((p: string, i: number) => (
-              <div key={i} className="group relative aspect-square overflow-hidden rounded-sm bg-muted">
-                <img
-                  src={p}
-                  alt={`Trabajo ${i + 1} de ${barber.name}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       <Footer />
     </div>
