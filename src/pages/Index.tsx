@@ -194,21 +194,19 @@ const Index = () => {
             <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
               Un espacio donde el talento<br />
               <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
-                independiente florece.
-              </span>
+                independiente florece</span>
             </h2>
           </div>
           <div className="flex flex-col justify-end">
             <p className="text-[#9D9D9D] leading-relaxed max-w-md">
-              La Barbería no es solo un lugar donde cortarse el pelo. Es una plataforma donde barberos independientes de excelencia encuentran silla, comunidad, marca y clientes. Cada barbero es su propio negocio — nosotros ponemos el espacio, el estilo y la cultura.
-            </p>
+              La Barbería no es solo un lugar donde cortarse el pelo. Es una plataforma donde barberos independientes de excelencia encuentran silla, comunidad, marca y clientes. Cada barbero es su propio negocio — nosotros ponemos el espacio, el estilo y la cultura</p>
           </div>
         </div>
 
         <div className="grid gap-px bg-[#9D9D9D]/10 border border-[#9D9D9D]/10 md:grid-cols-4">
           {[
             { k: '+16',   l: 'Barberos residentes',     d: 'Talento cuidadosamente seleccionado' },
-            { k: '5',     l: 'Locales en Santiago',     d: 'Ubicaciones estratégicamente localizadas' },
+            { k: '5',     l: 'Locales en Santiago',     d: 'Estratégicamente localizados' },
             { k: '+2.000', l: 'Clientes satisfechos',   d: 'Calidad en cada servicio' },
             { k: '10',    l: 'Años en el mercado',      d: 'Excelencia y tradición en cada servicio' },
           ].map((s) => (
@@ -271,8 +269,7 @@ const Index = () => {
           <p className="eyebrow mb-3">◆ Talento residente</p>
           <h2 className="display text-4xl md:text-6xl">Elige con quién atenderte</h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/70">
-            Cada barbero tiene su propio sello y estilo y agenda. Reserva con quien más te represente.
-          </p>
+            Cada barbero tiene su propio sello y estilo y agenda. Reserva con quien más te represente</p>
         </div>
 
         {/* Tabs por local */}
@@ -308,12 +305,10 @@ const Index = () => {
             <h2 className="display text-4xl md:text-6xl max-w-3xl">
               Lo que hacemos,{' '}
               <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
-                bien hecho.
-              </span>
+                bien hecho</span>
             </h2>
             <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
-              Resultados consistentes y atención excepcional. Sin complicaciones ni atajos. Solo calidad.
-            </p>
+              Resultados consistentes y atención excepcional. Sin complicaciones ni atajos. Solo calidad</p>
           </div>
 
           <div className="grid gap-px bg-[#9D9D9D]/10 border border-[#9D9D9D]/10 md:grid-cols-2 lg:grid-cols-3">
@@ -354,8 +349,7 @@ const Index = () => {
           <p className="eyebrow mb-3">◆ Nuestros locales</p>
           <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
-            Cinco locales diseñados para la experiencia de barbería clásica premium.
-          </p>
+            Cinco locales diseñados para la experiencia de barbería clásica premium</p>
         </div>
         <div className="mb-8 flex flex-wrap gap-2">
           {localTabs.map((tab) => (
@@ -402,12 +396,10 @@ const Index = () => {
           <h2 className="display text-4xl md:text-6xl">
             5 sucursales en Santiago,{' '}
             <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
-              la misma calidad.
-            </span>
+              la misma calidad</span>
           </h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
-            Presencia en sectores estratégicos de Santiago. Mismo servicio. Más cerca de ti.
-          </p>
+            Presencia en sectores estratégicos de Santiago. Mismo servicio. Más cerca de ti</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -434,14 +426,13 @@ const Index = () => {
             </span>
             <p className="mt-4 display text-2xl leading-tight text-[#F7F4EF]">Próximamente</p>
             <p className="mt-3 text-sm text-[#F7F4EF]/60">
-              Seguimos expandiendo el hub. Síguenos en Instagram para enterarte primero.
-            </p>
+              Seguimos expandiendo el hub. Síguenos en Instagram para enterarte primero</p>
           </div>
         </div>
 
         <div className="mt-10 flex items-center gap-3 text-sm text-[#9D9D9D]/50 border-t border-[#9D9D9D]/10 pt-6">
           <Calendar className="h-4 w-4 text-[#9D9D9D]" />
-          <span>Abiertos todo el año, excepto feriados irrenunciables.</span>
+          <span>Abiertos todo el año, excepto feriados irrenunciables</span>
         </div>
       </section>
 
@@ -454,12 +445,10 @@ const Index = () => {
               <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
                 Sé parte del{' '}
                 <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
-                  hub.
-                </span>
+                  hub</span>
               </h2>
               <p className="mt-6 text-[#9D9D9D] leading-relaxed max-w-lg">
-                La Barbería es más que un local — es un modelo de negocio probado. Con 10 años en el mercado, 5 sucursales y +2.000 clientes mensuales, abrimos nuestra red a emprendedores con visión.
-              </p>
+                La Barbería es más que un local — es un modelo de negocio probado. Con 10 años en el mercado, 5 sucursales y +2.000 clientes mensuales, abrimos nuestra red a emprendedores con visión</p>
               <ul className="mt-8 space-y-4">
                 {[
                   { icon: '◆', t: 'Marca consolidada', d: 'Identidad visual, procesos y reputación ya construidos.' },
@@ -559,13 +548,12 @@ const Index = () => {
                 ¿Quieres trabajar<br />con nosotros?
               </h2>
               <p className="text-[#9D9D9D]/60 leading-relaxed mb-8">
-                Si eres barbero y quieres ser parte del hub, o si buscas trabajo en cualquier rol en La Barbería, envíanos tu CV. Siempre estamos buscando talento.
-              </p>
+                Si eres barbero y quieres ser parte del hub, o si buscas trabajo en cualquier rol en La Barbería, envíanos tu CV. Siempre estamos buscando talento</p>
 
               {cvSent ? (
                 <div className="rounded-sm border border-[#9D9D9D]/30 bg-[#9D9D9D]/10 p-8 text-center">
                   <p className="display text-3xl text-[#9D9D9D]">◆ CV enviado</p>
-                  <p className="mt-3 text-[#9D9D9D]/70">Lo revisamos y te contactamos si hay match.</p>
+                  <p className="mt-3 text-[#9D9D9D]/70">Lo revisamos y te contactamos si hay match</p>
                   <button onClick={() => setCvSent(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-[#9D9D9D] hover:underline">
                     Enviar otro
                   </button>
