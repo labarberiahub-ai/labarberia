@@ -170,7 +170,7 @@ const Index = () => {
             <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)', lineHeight: 1 }}>
               SOMOS LA BARBERÍA
             </span>
-            <span className="block" style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.8rem, 4.5vw, 5rem)', lineHeight: 1.1, color: '#9D9D9D' }}>
+            <span className="block" style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.2rem, 3vw, 3.2rem)', lineHeight: 1.1, color: '#9D9D9D' }}>
               Hub de barberos profesionales.
             </span>
           </h1>
