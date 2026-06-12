@@ -344,40 +344,77 @@ const Index = () => {
 
       {/* ── PORTAFOLIO (fotos de locales) ─────────────────────────────────── */}
       <section id="portafolio" className="container-wide py-20 md:py-28 scroll-mt-24">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Nuestros locales</p>
-            <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
-          </div>
-          <span className="hidden md:block text-[10px] uppercase tracking-[0.2em] text-[#9D9D9D]/40">5 locales · Santiago</span>
+        <div className="mb-8">
+          <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Nuestros locales</p>
+          <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
         </div>
 
-        {/* Tabs */}
-        <div className="mb-6 flex flex-wrap gap-2">
-          {localTabs.map((tab) => (
-            <button key={tab} onClick={() => setActiveLocalPhoto(tab)}
-              className={cn('rounded-sm border px-4 py-2 text-[11px] uppercase tracking-[0.2em] transition-all',
-                activeLocalPhoto === tab
-                  ? 'bg-[#F7F4EF] text-[#000000] border-transparent font-semibold'
-                  : 'border-[#9D9D9D]/20 text-[#F7F4EF]/70 hover:border-[#F7F4EF]/60 hover:text-[#F7F4EF]'
-              )}>
-              {tab}
-            </button>
-          ))}
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr] gap-[3px]">
 
-        {/* Grid 3 columnas */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-[3px]">
-          {localPhotos.map((p, i) => (
-            <div key={i} className="relative overflow-hidden rounded-sm bg-[#111] group" style={{ aspectRatio: '4/3' }}>
-              <img src={p.src} alt={p.alt} loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#000]/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-[#F7F4EF]/70">{p.local}</span>
+          {/* Columna izquierda */}
+          <div className="flex flex-col gap-[3px]">
+            {/* Manuel Montt — foto destacada */}
+            <a href="https://www.google.com/maps/place/Manuel+Montt+1221,+Providencia" target="_blank" rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-sm bg-[#1a1a1a]" style={{ height: '280px' }}>
+              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/manuelmontt/foto-1.jpg"
+                alt="Manuel Montt" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#9D9D9D]/70 mb-1">Sucursal</p>
+                <p className="display text-2xl text-[#F7F4EF]">Manuel Montt</p>
+                <p className="text-xs text-[#F7F4EF]/50 mt-1">Manuel Montt 1221, local 202 · Providencia</p>
               </div>
+            </a>
+
+            {/* Barrio Italia + Consistorial */}
+            <div className="grid grid-cols-2 gap-[3px]">
+              <a href="https://www.google.com/maps/place/Condell+1166,+Providencia" target="_blank" rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-sm bg-[#222]" style={{ height: '160px' }}>
+                <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/barrioitalia/foto-1.jpg"
+                  alt="Barrio Italia" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="text-sm font-medium text-[#F7F4EF]">Barrio Italia</p>
+                  <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Providencia</p>
+                </div>
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Los+Presidentes+8220+Peñalolén" target="_blank" rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-sm bg-[#1a1a1a]" style={{ height: '160px' }}>
+                <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-1.jpg"
+                  alt="Consistorial" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="text-sm font-medium text-[#F7F4EF]">Consistorial</p>
+                  <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Peñalolén</p>
+                </div>
+              </a>
             </div>
-          ))}
+          </div>
+
+          {/* Columna derecha */}
+          <div className="flex flex-col gap-[3px]">
+            <a href="https://www.google.com/maps/place/Padre+Hurtado+Central+1531,+Las+Condes" target="_blank" rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-sm bg-[#222] flex-1" style={{ minHeight: '215px' }}>
+              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/losdominicos/foto-1.jpg"
+                alt="Los Dominicos" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-sm font-medium text-[#F7F4EF]">Los Dominicos</p>
+                <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">Padre Hurtado Central</p>
+              </div>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Príncipe+de+Gales+5921+La+Reina" target="_blank" rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-sm bg-[#1a1a1a] flex-1" style={{ minHeight: '215px' }}>
+              <img src="https://mwymquhbuljossskekoj.supabase.co/storage/v1/object/public/barberos/locales/principedegales/foto-2.jpeg"
+                alt="Príncipe de Gales" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-sm font-medium text-[#F7F4EF]">Príncipe de Gales</p>
+                <p className="text-[9px] text-[#F7F4EF]/40 mt-0.5">La Reina</p>
+              </div>
+            </a>
+          </div>
+
         </div>
       </section>
 
