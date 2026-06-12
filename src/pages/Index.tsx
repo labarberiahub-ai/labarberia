@@ -173,7 +173,7 @@ const Index = () => {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg animate-fade-up" style={{ animationDelay: '200ms' }}>
+          <p className="mt-4 animate-fade-up text-[#F7F4EF]/90" style={{ animationDelay: '200ms', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.5rem, 3vw, 2.8rem)', lineHeight: 1.2 }}>
             Hub de barberos profesionales
           </p>
 
