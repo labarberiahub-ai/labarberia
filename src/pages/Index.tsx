@@ -166,15 +166,14 @@ const Index = () => {
             </p>
           </div>
 
-          <h1 className="display leading-[0.95] text-bone animate-fade-up" style={{ animationDelay: '100ms' }}>
-            <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)' }}>
+          <h1 className="display leading-[0.92] text-bone animate-fade-up" style={{ animationDelay: '100ms' }}>
+            <span className="block whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 6vw, 6.5rem)', lineHeight: 1 }}>
               SOMOS LA BARBERÍA
             </span>
+            <span className="block" style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.8rem, 4.5vw, 5rem)', lineHeight: 1.1, color: '#9D9D9D' }}>
+              Hub de barberos profesionales.
+            </span>
           </h1>
-
-          <p className="mt-4 animate-fade-up" style={{ animationDelay: '200ms', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(1.5rem, 3vw, 2.8rem)', lineHeight: 1.2, color: '#9D9D9D' }}>
-            Hub de barberos profesionales
-          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: '300ms' }}>
             <Button asChild size="lg" className="bg-[#F7F4EF] text-[#000000] font-semibold uppercase tracking-[0.15em] hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all rounded-sm px-8">
