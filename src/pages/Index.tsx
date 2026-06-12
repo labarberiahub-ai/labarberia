@@ -300,7 +300,7 @@ const Index = () => {
       <section id="servicios" className="bg-[#000000] border-y border-[#9D9D9D]/10 mt-16 scroll-mt-24">
         <div className="container-wide py-20 md:py-28">
           <div className="mb-12">
-            <p className="eyebrow mb-3">◆ Servicios</p>
+            <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Servicios</p>
             <h2 className="display text-4xl md:text-6xl max-w-3xl">
               Lo que hacemos,{' '}
               <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
@@ -345,7 +345,7 @@ const Index = () => {
       {/* ── PORTAFOLIO (fotos de locales) ─────────────────────────────────── */}
       <section id="portafolio" className="container-wide py-20 md:py-28 scroll-mt-24">
         <div className="mb-8">
-          <p className="eyebrow mb-3">◆ Nuestros locales</p>
+          <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ Nuestros locales</p>
           <h2 className="display text-4xl md:text-6xl">Los espacios del hub</h2>
           <p className="mt-3 max-w-xl text-[#9D9D9D]/60">
             Cinco locales diseñados para la experiencia de barbería clásica premium</p>
