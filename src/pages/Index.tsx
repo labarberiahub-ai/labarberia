@@ -190,7 +190,7 @@ const Index = () => {
       <section className="container-wide py-20 md:py-28">
         <div className="grid gap-4 md:grid-cols-2 mb-16">
           <div>
-            <p className="eyebrow mb-3">◆ El concepto HUB</p>
+            <p className="eyebrow mb-3" style={{ color: '#F7F4EF' }}>◆ El concepto HUB</p>
             <h2 className="display text-4xl md:text-6xl text-[#F7F4EF]">
               Un espacio donde el talento<br />
               <span style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontWeight: 400 }} className="text-[#9D9D9D]">
@@ -207,10 +207,10 @@ const Index = () => {
 
         <div className="grid gap-px bg-[#9D9D9D]/10 border border-[#9D9D9D]/10 md:grid-cols-4">
           {[
-            { k: '+16',   l: 'Barberos residentes',     d: 'Talento independiente seleccionado' },
-            { k: '5',     l: 'Locales en Santiago',     d: 'Ubicaciones estratégicamente localizadas.' },
-            { k: '+2.000', l: 'Clientes satisfechos cada mes', d: 'Clientes que vuelven' },
-            { k: '10',    l: '10 Años en el mercado',  d: 'Excelencia y tradición en cada servicio.' },
+            { k: '+16',   l: 'Barberos residentes',     d: 'Talento cuidadosamente seleccionado' },
+            { k: '5',     l: 'Locales en Santiago',     d: 'Ubicaciones estratégicamente localizadas' },
+            { k: '+2.000', l: 'Clientes satisfechos',   d: 'Calidad en cada servicio' },
+            { k: '10',    l: 'Años en el mercado',      d: 'Excelencia y tradición en cada servicio' },
           ].map((s) => (
             <div key={s.l} className="bg-background p-8">
               <p className="display text-5xl md:text-6xl text-[#9D9D9D] leading-none">{s.k}</p>
